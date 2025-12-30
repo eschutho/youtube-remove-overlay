@@ -59,7 +59,11 @@ Once installed, the extension automatically works on YouTube. Simply visit any Y
 
 ## How it Works
 
-The extension uses two approaches to hide the overlay:
+The extension uses multiple approaches to hide the overlay:
 
 1. **CSS**: Applies styles to set `opacity: 0` and `display: none` on elements with class `ytp-ce-element-show`
-2. **JavaScript**: Uses a MutationObserver to detect and hide dynamically added overlay elements in real-time
+2. **Parent Class**: Adds a custom class (`yt-overlay-hidden`) to the `html5-video-player` parent element, allowing CSS to target child overlay elements
+3. **JavaScript**: Uses a MutationObserver to:
+   - Detect when the `html5-video-player` element is added and immediately add the custom class
+   - Watch for dynamically added overlay elements in real-time
+   - Monitor class attribute changes to catch overlays that are shown by adding the `ytp-ce-element-show` class
