@@ -1,0 +1,5 @@
+/* Hide YouTube overlay elements */
+.ytp-ce-element-show {
+  opacity: 0 !important;
+  display: none !important;
+}

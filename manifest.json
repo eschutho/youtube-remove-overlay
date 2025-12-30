@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Remove Overlay",
+  "version": "1.0.0",
+  "description": "Removes the overlay at the end of YouTube videos",
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": []
+}
